@@ -1,0 +1,22 @@
+name: submit
+
+on:
+  push:
+  schedule:
+    - cron: '0 18 * * *'
+    
+jobs:
+  punch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.4
+        with:
+          node-version: 15.8.0
+      - name: install pkgs
+        run: npm install
+      - name: punch in
+        run: node punch-in.js
+      
