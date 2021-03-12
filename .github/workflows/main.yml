@@ -2,8 +2,10 @@ name: submit
 
 on:
   push:
+    branches: [master]
   schedule:
-    - cron: '0 18 * * *'
+    - cron: '0 4 * * *'
+    # 中午12点准时提交
     
 jobs:
   punch:
@@ -18,5 +20,5 @@ jobs:
       - name: install pkgs
         run: npm install
       - name: punch in
-        run: node punch-in.js
+        run: node index.js ${{secrets.SENDER}} ${{secrets.PASS}}
       

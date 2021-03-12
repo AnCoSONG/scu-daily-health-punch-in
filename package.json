@@ -1,0 +1,25 @@
+{
+  "name": "scu-daily-health-punch-in",
+  "version": "1.0.0",
+  "description": "automatically submit SCU daily health punch in",
+  "main": "punch-in.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnCoSONG/scu-daily-health-punch-in.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnCoSONG/scu-daily-health-punch-in/issues"
+  },
+  "homepage": "https://github.com/AnCoSONG/scu-daily-health-punch-in#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "nodemailer": "^6.5.0",
+    "qs": "^6.9.6"
+  }
+}
