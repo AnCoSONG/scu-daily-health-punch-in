@@ -1,12 +1,10 @@
-name: submit
-
+name: Test
 on:
-  schedule:
-    - cron: '0 4 * * *'
-    # 中午12点准时提交
-    
+  push:
+    branches: [master]
+
 jobs:
-  punch:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: checkout code
@@ -17,6 +15,5 @@ jobs:
           node-version: 15.8.0
       - name: install pkgs
         run: npm install
-      - name: punch in
-        run: node index.js ${{secrets.SENDER}} ${{secrets.PASS}}
-      
+      - name: run test
+        run: node test
