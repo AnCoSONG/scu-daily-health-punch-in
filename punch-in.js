@@ -71,19 +71,18 @@ function dataProcess(template) {
   }
   return template;
 }
-exports.punchIn = async function () {
+exports.punchIn = async function (data, cookie) {
+  // const data = require("./template-chengdu.json");
+  const axios = require("axios").default;
+  const qs = require("qs");
   try {
-    const data = require("./template-chengdu.json");
-    const axios = require("axios").default;
-    const qs = require("qs");
     const template = dataProcess(data);
     const res = (await axios.post(
       "https://wfw.scu.edu.cn/ncov/wap/default/save",
       qs.stringify(template),
       {
         headers: {
-          cookie:
-            "UUkey=51c53f223b63262df069e8197bddae3a; eai-sess=66hkd4ppnhepml8p0pf3gfnal1; Hm_lvt_48b682d4885d22a90111e46b972e3268=1614413170,1614413208,1615308442; Hm_lpvt_48b682d4885d22a90111e46b972e3268=1615308442",
+          cookie: cookie,
           "content-type": "application/x-www-form-urlencoded",
           "user-agent":
             "Mozilla/5.0 (Macintosh; Intel Mac OS X 11_2_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.192 Safari/537.36",
