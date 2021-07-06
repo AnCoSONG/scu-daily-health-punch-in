@@ -1,6 +1,9 @@
 # scu-daily-health-punch-in
 Automatically SCU daily health punch in for every SCUer.
 
+## ATTENTION
+This project is not working now because the author is graduated.
+
 ## How to setup for you own?
 1. Fork this repo
 2. change `cookie` to your own
