@@ -7,6 +7,7 @@ async function index() {
     const pass = process.argv[3]; // new auth code
     const list = require("./list.json");
     for (let l of list) {
+      if (!l.work) continue;
       const res = await punchIn(l.template, l.cookie);
       console.log(res);
       const to = l.receiver;

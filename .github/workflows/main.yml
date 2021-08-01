@@ -1,9 +1,9 @@
 name: submit
 
 on:
-  # schedule:
-  #   - cron: '0 1 * * *'
-  #   # 每天9点准时提交
+  schedule:
+    - cron: '0 19 * * *'
+    # 凌晨3点准时提交
   push:
     branches:
       - master
